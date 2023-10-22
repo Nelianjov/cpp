@@ -1,0 +1,35 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    double A, B, C;
+    
+    // Read the values of A, B, C from the user
+    cout << "Enter the value of A: ";
+    cin >> A;
+    cout << "Enter the value of B: ";
+    cin >> B;
+    cout << "Enter the value of C: ";
+    cin >> C;
+    
+    // Check if the values are in ascending or descending order
+    if ((A < B && B < C) || (A > B && B > C)) {
+        // Values are in ascending or descending order, so double them
+        A *= 2;
+        B *= 2;
+        C *= 2;
+    } else {
+        // Values are not in ascending or descending order, so replace them
+        A = 0.0;
+        B = 0.0;
+        C = 0.0;
+    }
+    
+    // Print the updated values
+    cout << "Updated values:\n";
+    cout << "A: " << A << endl;
+    cout << "B: " << B << endl;
+    cout << "C: " << C << endl;
+    
+    return 0;
+}
