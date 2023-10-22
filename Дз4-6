@@ -1,0 +1,17 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    //finding the factorial
+    long int n,product=1;
+    cout<<"enter a number"<<endl;
+    cin>>n;
+    for(int i=n;i>0;i--){
+        product=product*i;
+    }
+    if(n<0){
+        cout<<"the factorial of the number entered is undefined"<<endl;
+    }else{
+        cout<<"the factorial is"<<product;
+    }
+}
