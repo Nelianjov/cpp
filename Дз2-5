@@ -1,0 +1,16 @@
+#include <iostream>
+
+int main() {
+    int num1, num2, num3;
+    std::cout << "Enter three integers: ";
+    std::cin >> num1 >> num2 >> num3;
+
+    int largest, smallest;
+    largest = num1 > num2 ? (num1 > num3 ? num1 : num3) : (num2 > num3 ? num2 : num3);
+    smallest = num1 < num2 ? (num1 < num3 ? num1 : num3) : (num2 < num3 ? num2 : num3);
+
+    std::cout << "Largest: " << largest << std::endl;
+    std::cout << "Smallest of the remaining two: " << smallest << std::endl;
+
+    return 0;
+}
