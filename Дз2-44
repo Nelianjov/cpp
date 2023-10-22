@@ -1,0 +1,23 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int number;
+
+    // Read the two-digit number from the user
+    cout << "Enter a two-digit number: ";
+    cin >> number;
+
+    // Extract the tens and units digits from the number
+    int tensDigit = number / 10;
+    int unitsDigit = number % 10;
+
+    // Check if either the tens digit or the units digit is 3
+    if (tensDigit == 3 || unitsDigit == 3) {
+        cout << "The digit 3 is included in the number." << endl;
+    } else {
+        cout << "The digit 3 is not included in the number." << endl;
+    }
+
+    return 0;
+}
