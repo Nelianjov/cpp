@@ -1,0 +1,39 @@
+#include <iostream>
+
+using namespace std;
+
+int RootCount(int A, int B, int C) {
+    int D = B * B - 4 * A * C;
+
+    // If the discriminant is greater than zero, there are two distinct roots
+    if (D > 0) {
+        return 2;
+    }
+    // If the discriminant is equal to zero, there is one repeated root
+    else if (D == 0) {
+        return 1;
+    }
+    // If the discriminant is less than zero, there are no real roots
+    else {
+        return 0;
+    }
+}
+
+int main() {
+    for (int i = 0; i < 3; i++) {
+        int A, B, C;
+
+        // Read the coefficients from the user
+        cin >> A >> B >> C;
+
+        // Find the number of roots for the quadratic equation
+        int roots = RootCount(A, B, C);
+
+        // Display the results
+        //cout << "Coefficients: " << A << ", " << B << ", " << C << endl;
+        cout << roots << endl;
+        cout << endl;
+    }
+
+    return 0;
+}
