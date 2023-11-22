@@ -1,0 +1,30 @@
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
+int main() {
+    float M, N;
+    double D;
+    cin >> M;
+    cin >> N;
+    cin >> D;
+
+    vector<double> originalSet(N);
+    for (int i = 0; i < N; ++i) {
+        cin >> originalSet[i];
+    }
+
+    vector<vector<double>> matrix(M, vector<double>(N));
+    for (int i = 0; i < N; ++i) {
+        matrix[0][i] = originalSet[i];
+        cout<<matrix[0][i]<<endl;
+    }
+    for (int i = 1; i < M; ++i) {
+        for (int j = 0; j < N; ++j) {
+            matrix[i][j] = matrix[i - 1][j] * D;
+            cout<<matrix[i][j]<<endl;
+        }
+    }
+   
+}
