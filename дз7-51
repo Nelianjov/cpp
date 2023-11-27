@@ -1,0 +1,54 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int M, N;
+
+    // Input the dimensions of the matrix
+    cin >> M;
+    cin >> N;
+
+    float matrix[M][N];
+
+    // Input the elements of the matrix
+    for (int i = 0; i < M; i++) {
+        for (int j = 0; j < N; j++) {
+            cin >> matrix[i][j];
+        }
+    }
+
+    // Find the row index of the minimum and maximum elements
+    int minRowIndex = 0, maxRowIndex = 0;
+    int minElement = matrix[0][0], maxElement = matrix[0][0];
+
+    for (int i = 0; i < M; i++) {
+        for (int j = 0; j < N; j++) {
+            if (matrix[i][j] < minElement) {
+                minElement = matrix[i][j];
+                minRowIndex = i;
+            }
+            if (matrix[i][j] > maxElement) {
+                maxElement = matrix[i][j];
+                maxRowIndex = i;
+            }
+        }
+    }
+
+    // Swap the rows containing the minimum and maximum elements
+    if (minRowIndex != maxRowIndex) {
+        for (int j = 0; j < N; j++) {
+            int temp = matrix[minRowIndex][j];
+            matrix[minRowIndex][j] = matrix[maxRowIndex][j];
+            matrix[maxRowIndex][j] = temp;
+        }
+    }
+
+    // Output the updated matrix after swapping
+    for (int i = 0; i < M; i++) {
+        for (int j = 0; j < N; j++) {
+            cout << matrix[i][j] << " ";
+        }
+       
+    }
+    return 0;
+}
