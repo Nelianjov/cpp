@@ -1,0 +1,19 @@
+#include <iostream>
+
+using namespace std;
+
+int main() {
+    int N;
+    cin >> N;
+
+    if (N > 26) {
+        N = 26;
+    }
+    char letter = 'z';
+    for (int i = N; i > 0; i--) {
+        cout << letter << " ";
+        letter--;
+    }
+
+    return 0;
+}
