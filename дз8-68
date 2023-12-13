@@ -1,0 +1,31 @@
+#include <iostream>
+#include <string>
+#include <cctype>
+
+using namespace std;
+
+int main() {
+    string input;
+    getline(cin, input);
+
+    bool alphabeticallyOrdered = true;
+    int position = 0;
+
+    for (int i = 1; i < input.length(); i++) {
+        if (isalpha(input[i]) && isalpha(input[i - 1])) {
+            if (tolower(input[i]) < tolower(input[i - 1])) {
+                alphabeticallyOrdered = false;
+                position = i + 1;
+                break;
+            }
+        }
+    }
+
+    if (alphabeticallyOrdered) {
+        cout << "0" << endl;
+    } else {
+        cout << position << endl;
+    }
+
+    return 0;
+}
